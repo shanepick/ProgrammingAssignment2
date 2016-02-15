@@ -3,8 +3,8 @@
 ## the previous cached value, rather than re-calculating each time.
 
 
-## Returns a list of functions to get/set the value of matrix x and 
-## get/set the the inverse for a matrix x.
+## Returns a "matrix object" (list of functions to get/set the value of a matrix and 
+## get/set the inverse for a matrix) for a matrix x.
 
 makeCacheMatrix <- function(x = matrix()) {
     inverse <- NULL
@@ -21,8 +21,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## returns the inverse of a matrix when passed the list of functions for
-## a matrix as returned by makeCacheMatrix().
+## returns the inverse of a matrix when passed a "matrix object" as returned by 
+## makeCacheMatrix().
 
 cacheSolve <- function(x, ...) {
     inverse <- x$getInverse()
